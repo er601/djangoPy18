@@ -20,5 +20,8 @@ from product.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage),
-    path('pomidor/', pomidor)
+    path('pomidor/', pomidor),
+    path('categories/', categories_view),
+    path('about/', AboutView.as_view())  # когда импортируем классовый view, обязательно прописв=ываем as_view()
+
 ]

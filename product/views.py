@@ -18,7 +18,7 @@ def homepage(request):
     # return HttpResponse('hi')
     products = Vegetables.objects.all()
     context = {'all_vegetables': products}
-    return render(request, 'product_list.html', context)  # сначала указыаваем request потом в ковычках указываем путь для html файла
+    return render(request, 'product/list.html', context)  # сначала указыаваем request потом в ковычках указываем путь для html файла
 
 
 def pomidor(request):
@@ -30,5 +30,5 @@ def pomidor(request):
 def categories_view(request):
     categories = Category.objects.all()
     c = {'categories': categories}  # В ковычках указали контекст его мы используемф html файле чтобы получить данные с БД
-    return render(request, 'categories.html', c)
+    return render(request, 'product/categories.html', c)
 

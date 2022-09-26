@@ -5,9 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Список категорий</h1>
 
-    {% for vegetable in all_vegetables  %}
-        <div> {{ vegetable.name }}</div>
+    {% for cat in categories %}
+        <div>{{ cat.name }}</div>
     {% endfor %}
 
 </body>

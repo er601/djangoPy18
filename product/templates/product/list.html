@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Список овощей</h1>
-
-    {% for vegetable in all_vegetables  %}
-        <div> {{ vegetable.name }}</div>
-    {% endfor %}
+    <div class="row">
+        {% for vegetable in all_vegetables  %}
+        <div class="col-4 vegs">
+            <div>
+                <h2><a href="/vegetables/{{ vegetable.id }}">{{ vegetable.name }}</a></h2>
+                <h3>{{ vegetable.price }} som</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

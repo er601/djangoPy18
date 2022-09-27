@@ -21,6 +21,12 @@ def homepage(request):
     return render(request, 'product/list.html', context)  # сначала указыаваем request потом в ковычках указываем путь для html файла
 
 
+def vegetable_detail(request, id):
+    vegetable = Vegetables.objects.get(id=id)
+    context = {'vegetable': vegetable}
+    return render(request, 'product/vegetable_info.html', context)
+
+
 def pomidor(request):
     pomidor_objects = Vegetables.objects.get(id=1)
     description = pomidor_objects.description

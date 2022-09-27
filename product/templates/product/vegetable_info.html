@@ -1,0 +1,12 @@
+{extends 'base.html'}
+{% block content %}
+
+  <h2>{{ vegetable.name }}</h2>
+  <div>
+    {{ vegetable.description }}
+    <hr>
+    Calories: {{ vegetable.calories }}
+  </div>
+  <h3>{{ vegetable.price }} som</h3>
+
+{% endblock %}

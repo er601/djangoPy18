@@ -15,16 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from product.views import *
 
 from django.conf import settings
 from django.conf.urls.static import static
+
+from product.views import *
+from core.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage),
     path('pomidor/', pomidor),
     path('categories/', categories_view),
-    path('about/', AboutView.as_view())  # когда импортируем классовый view, обязательно прописв=ываем as_view()
+    path('about/', AboutView.as_view()),  # когда импортируем классовый view, обязательно прописв=ываем as_view()
+    path('price/', price_view),
+    path('vegetables/<id>/', vegetable_detail)
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

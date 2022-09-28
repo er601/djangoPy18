@@ -27,9 +27,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage),
     path('pomidor/', pomidor),
-    path('categories/', categories_view),
+    path('categories/', categories_view, name='categories'),
+    path('category/<int:id>/', category_detail, name='category'),
     path('about/', AboutView.as_view()),  # когда импортируем классовый view, обязательно прописв=ываем as_view()
     path('price/', price_view),
-    path('vegetables/<id>/', vegetable_detail)
+    path('vegetables/<id>/', vegetable_detail),
+    path('feedback', feedback_view, name='feedback'),
+    path('feedback_form', feedback_form_view, name='feedback_form'),
+
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

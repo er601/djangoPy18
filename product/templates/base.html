@@ -13,18 +13,20 @@
 </head>
 <body>
 
-  <nav>
+<nav>
     <a href="/">Home</a>
     <a href="/pomidor">Pomidor</a>
-    <a href="/about">About as</a>
-  </nav>
-  <div class="content">
+    <a href="{% url 'categories' %}">Categories</a>
+    <a href="{% url 'feedback' %}">feedback</a>
+    <a href="/about">About us</a>
+</nav>
+<div class="content">
 
-      {% block content %}
+    {% block content %}
 
-      {% endblock %}
+    {% endblock %}
 
-  </div>
+</div>
 
 </body>
 </html>
